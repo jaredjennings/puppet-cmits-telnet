@@ -16,6 +16,7 @@
 # \subsection{Disable Telnet}
 
 class telnet::no {
-    include "telnet::no::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "telnet::no::${lower_osfamily}"
 }
 
